@@ -23,17 +23,17 @@
     background-color: #8f8f8f;
   }
   
-  .headLogo {
+  .headLogo___nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
     font-size: 18px;
     font-family: "Staatliches", sans-serif;
-    /* text-shadow: indigo 1px 0.5px 1px; */
     border: solid 1px white;
-    margin-right: 25px;
+    margin-right: 50px;
     background-color: white;
+    cursor: pointer;
   }
   
   #headLogo {
@@ -44,16 +44,19 @@
   }
   
   #schoolLogo {
-    width: 230px;
+    margin-left: 25px;
+    width: 180px;
+    /* height: ; */
     vertical-align: middle;
     background-color: white;
   }
   #nextLogo {
+    font-weight: 600;
     margin-block: 0 auto;
     background-color: white;
   }
   
   #login {
-    width: 40px;
+    width: 30px;
     background-color: white;
   }

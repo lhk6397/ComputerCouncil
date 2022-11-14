@@ -1,13 +1,8 @@
 .banner {
   display: block;
   margin: 0 auto;
-  text-align: center;
-  margin-top: 15px;
-}
-
-#banner {
-  width: 1024px;
-  height: 450px;
+  width: 85%;
+  height: 80vh;
 }
 
 .board {

@@ -36,7 +36,24 @@ app.get("/login", (req, res) => {
     res.render("login")
 })
 
-app.get((req, res) => {
+app.get("/intro", (req, res) => {
+  res.render("intro/intro")
+})
+
+app.get("/notice", (req, res) => {
+  res.render("notice/notice")
+})
+
+app.get("/community", (req, res) => {
+  res.render("community/community")
+})
+
+app.get("/ref", (req, res) => {
+  res.render("reference/reference")
+})
+
+// 404 PAGE
+app.use((req, res) => {
     res.status(404).send('404 HOME PAGE');
   });
 
