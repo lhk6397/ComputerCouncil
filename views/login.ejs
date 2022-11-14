@@ -1,0 +1,74 @@
+<% layout('layouts/boilerplate') -%>
+<% block('head').append('<link rel="stylesheet" href="/stylesheets/login.css">') %>
+
+<div>
+    <div style="padding: 30px"></div>
+    <div class="loginContainer">
+      <div class="formContainer">
+        <form name="loginForm" action="/cookie" method="get">
+          <div class="formTitle">
+            <p class="formTitleStyle">Login</p>
+          </div>
+          <div>
+            <div>
+              <a class="formItem">Name</a>
+            </div>
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter name"
+                class="formInput"
+              />
+            </div>
+            <div class="formTextAlertPadding">
+              <div id="alertName" class="formTextAlert"></div>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <a class="formItem">Student ID</a>
+            </div>
+            <div>
+              <input
+                type="text"
+                name="studentID"
+                placeholder="Enter student ID"
+                class="formInput"
+              />
+            </div>
+            <div class="formTextAlertPadding">
+              <div id="alertID" class="formTextAlert"></div>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <a class="formItem">Password</a>
+            </div>
+            <div>
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                class="formInput"
+              />
+            </div>
+            <div class="formTextAlertPadding">
+              <div id="alertPassword" class="formTextAlert"></div>
+            </div>
+          </div>
+
+          <div style="height: 10px"></div>
+          <div>
+            <button type="button" class="formSubmit" onclick="login()">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/javascripts/login.js"></script>
