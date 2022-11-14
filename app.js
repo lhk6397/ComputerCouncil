@@ -1,11 +1,10 @@
 const express = require("express");
-// test
-// test2
 const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const Post = require("./models/board");
+const User = require("./models/user");
 const methodOverride = require("method-override");
 
 const PORT = 3000;
@@ -34,6 +33,12 @@ app.get("/", (req, res) => {
 
 app.get("/login", (req, res) => {
     res.render("login")
+})
+
+app.post("/login", async (req, res) => {
+  const user = new User(req.body.user);
+  await user.save();
+  res.redirect(`/?id=${user._id}`);
 })
 
 app.get("/intro", (req, res) => {
