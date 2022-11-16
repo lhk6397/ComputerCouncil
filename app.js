@@ -1,4 +1,5 @@
 const express = require("express");
+// test 2022-11-16
 const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
@@ -57,9 +58,13 @@ app.get("/ref", (req, res) => {
   res.render("reference/reference")
 })
 
+app.all('*', (req, res) => {
+  res.status(404).render('404');
+})
+
 // 404 PAGE
 app.use((req, res) => {
-    res.status(404).send('404 HOME PAGE');
+    res.status(404).render('404');
   });
 
 app.listen(PORT, () => {
