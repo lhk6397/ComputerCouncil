@@ -5,7 +5,7 @@
     background-color: white;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 80px;
   }
   #blue {
     height: 3px;
@@ -28,10 +28,10 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
     font-family: "Staatliches", sans-serif;
     border: solid 1px white;
-    margin-right: 50px;
+    margin-right: 40px;
     background-color: white;
     cursor: pointer;
   }
@@ -44,7 +44,7 @@
   }
   
   #schoolLogo {
-    margin-left: 25px;
+    margin-left: 30px;
     width: 180px;
     /* height: ; */
     vertical-align: middle;
@@ -58,5 +58,6 @@
   
   #login {
     width: 30px;
+    margin-left: 10px;
     background-color: white;
   }
