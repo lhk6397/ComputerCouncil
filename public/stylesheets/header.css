@@ -28,7 +28,7 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    font-size: 25px;
+    font-size: 19px;
     font-family: "Staatliches", sans-serif;
     border: solid 1px white;
     margin-right: 40px;
@@ -60,4 +60,5 @@
     width: 30px;
     margin-left: 10px;
     background-color: white;
+    vertical-align: middle;
   }

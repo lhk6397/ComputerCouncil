@@ -1,2 +1,70 @@
 <% layout('layouts/boilerplate') -%>
-<%- include('../components/aside-tab') %>
+
+<link rel="stylesheet" href="/stylesheets/aside-tab.css">
+
+<div class="container">
+    <img alt="컴공배너" class="intro_banner" src="/pictures/intro_banner.jpg" />
+    <div class="sidebar d-flex gap-3 align-items-start w-100">
+        <%- include('../components/aside-tab', {routes: intro}) %>
+
+        <div class="w-100">
+            <!--소개 부분, 기본값-->
+            <div class="tab-pane  show active">
+                <div class="intro">
+                    <h2 class="intro_head"><%- intro.subroutes[0] %></h2>
+                </div>
+                <div>
+                    <h2 class="intro_subhead">
+                        <i class="bi bi-emoji-smile"></i> 학생회 설립목적
+                    </h2>
+                    <p class="text-start text-break">&nbsp&nbsp학생회는 학우들을 위한 기관으로서 학우들의 대표라는 책임감을 가지고
+                        학교와 학우, 학우와 학교를 이어주며, 학우들의 여론을 수렴하여 모든 일들을
+                        민주적, 자주적, 창의적으로 일을 진행한다. 이를 바탕으로 아름답고, 즐겁고, 건전한 대학문화를
+                        만드는 것을 목적으로 한다.</p>
+                    <a class="d-inline badge bg-warning text-wrap" href="https://www.instagram.com/seoultech_com/"
+                        target='_blank'>
+                        ☞학생회 인스타그램</a>
+                    <h2 class="intro_subhead">
+                        <i class="bi bi-emoji-smile"></i>
+                        <span class="ml-3">학생회 각 부서별 역할</span>
+                    </h2>
+                    <table class="table table-striped-columns table-bordered">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="w-25 text-center">회장</th>
+                                <td>대 내·외적 컴퓨터공학과 대표 활동</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row" class="w-25 text-center">부회장</th>
+                                <td>대 내·외적 컴퓨터공학과 대표 활동 보조, 회장 부재 시 학생회 업무 진행 총괄</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row" class="w-25 text-center">기획부</th>
+                                <td colspan="3">연합 모꼬지(M.T) /개강파티 등 과 행사 기획 담당</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="w-25 text-center">문화부</th>
+                                <td colspan="3">SNS 관리, 무대 준비 외 다른 부서 보조 및 사회 담당</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="w-25 text-center">선전부</th>
+                                <td colspan="3">플랑 및 대자보 쓰기 및 공지사항 공고 담당</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="w-25 text-center">사무부</th>
+                                <td colspan="3">학생회비 관리, 영수증 관리, 예산안/결산안 작성 담당</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-bottom: 50px;"></div>
+                </div>
+            </div>
+
+             
+
+            
+        </div>
+    </div>
+</div>

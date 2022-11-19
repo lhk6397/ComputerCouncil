@@ -6,9 +6,12 @@ const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const Post = require("./models/board");
 const User = require("./models/user");
+const Routes = require("./models/route");
 const methodOverride = require("method-override");
 
 const PORT = 3000;
+
+const { intro, notice, community, reference } = Routes;
 
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
@@ -43,29 +46,39 @@ app.post("/login", async (req, res) => {
 })
 
 app.get("/intro", (req, res) => {
-  res.render("intro/intro")
+  const { category } = req.query;
+  switch (category) {
+    case 'intro':
+      res.render("intro/intro", { intro })
+      break;
+    case 'chart':
+      res.render("intro/chart", { intro })
+      break;
+    case 'history':
+      res.render("intro/history", { intro })
+      break;
+    default:
+      res.redirect('intro?category=intro')
+      break;
+  }
+  
 })
 
 app.get("/notice", (req, res) => {
-  res.render("notice/notice")
+  res.render("notice/notice", { notice })
 })
 
 app.get("/community", (req, res) => {
-  res.render("community/community")
+  res.render("community/community", { community })
 })
 
 app.get("/ref", (req, res) => {
-  res.render("reference/reference")
+  res.render("reference/reference", { reference })
 })
 
 app.all('*', (req, res) => {
   res.status(404).render('404');
 })
-
-// 404 PAGE
-app.use((req, res) => {
-    res.status(404).render('404');
-  });
 
 app.listen(PORT, () => {
     console.log(`Serving on PORT ${PORT}`);

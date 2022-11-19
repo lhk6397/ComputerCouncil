@@ -1,2 +1,10 @@
 <% layout('layouts/boilerplate') -%>
-<%- include('../components/aside-tab') %>
+
+<link rel="stylesheet" href="/stylesheets/aside-tab.css">
+
+<div class="container">
+    <img alt="컴공배너" class="intro_banner" src="/pictures/intro_banner.jpg" />
+    <div class="sidebar d-flex gap-3 align-items-start w-100">
+        <%- include('../components/aside-tab', {routes: notice}) %>
+    </div>
+</div>
