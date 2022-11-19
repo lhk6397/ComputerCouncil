@@ -65,15 +65,48 @@ app.get("/intro", (req, res) => {
 })
 
 app.get("/notice", (req, res) => {
-  res.render("notice/notice", { notice })
+  const { category } = req.query;
+  switch (category) {
+    case 'notice':
+      res.render("notice/notice", { notice })
+      break;
+    case 'event':
+      res.render("notice/event", { notice })
+      break;
+    default:
+      res.redirect('notice?category=notice')
+      break;
+  }
 })
 
 app.get("/community", (req, res) => {
-  res.render("community/community", { community })
+  const { category } = req.query;
+  switch (category) {
+    case 'community':
+      res.render("community/community", { community })
+      break;
+    case 'faq':
+      res.render("community/faq", { community })
+      break;
+    case 'contact':
+      res.render("community/contact", { community })
+      break;
+    default:
+      res.redirect('community?category=community')
+      break;
+  }
 })
 
-app.get("/ref", (req, res) => {
-  res.render("reference/reference", { reference })
+app.get("/reference", (req, res) => {
+  const { category } = req.query;
+  switch (category) {
+    case 'ref':
+      res.render("reference/ref", { reference })
+      break;
+    default:
+      res.redirect('reference?category=ref')
+      break;
+  }
 })
 
 app.all('*', (req, res) => {
