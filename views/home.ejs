@@ -1,20 +1,52 @@
 <% layout('layouts/boilerplate') -%>
-<% block('head').append('<link rel="stylesheet" href="/stylesheets/home.css">') %>
+  <% block('head').append('<link rel="stylesheet" href="/stylesheets/home.css">') %>
 
-  <img alt="컴공배너" class="banner" src="/pictures/banner.jpg" />
-  <section class="board">
-    <div>
-      <h2>◆공지사항◆</h2>
-      <div id="notice"></div>
+    <div class="banner">
+      <div class="banner_inner">
+        <p>마음을 움직이는 학생회</p>
+        <p class="movement">무브먼트</p>
+      </div>
     </div>
-    <div>
-      <h2>◇커뮤니티◇</h2>
-      <div id="community"></div>
-    </div>
-  </section>
-  <section class="ad">
-    <div>
-      <h3>광고</h3>
-      <div id="ad"></div>
-    </div>
-  </section>
+
+    <section class="board">
+      <div class="url_box bg-info">
+        <div class="box_inner">
+          <h2 class="h3 fw-bold">열린 취업의 장</h2>
+          <p class="p-2 fs-6 minus_margin_bottom">컴퓨터공학과 취준생들을 위한 여러 취업 정보 바로보기</p>
+          <a class="bi bi-door-open fs-1 indoor" href="https://computer.seoultech.ac.kr/info_plaza/job_info/" target='_blank'></a>
+        </div>
+      </div>
+      <div class="url_box url_box_2 bg-warning">
+        <div class="box_inner">
+          <h2 class="h3 fw-bold">Event🎉</h2>
+          <p class="p-2 fs-5">컴퓨터공학과 학우들을 위한 여러 이벤트 소식!</p>
+          <a href="views\notice\event.ejs"><svg class="fs-2 event_red" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentcolor" class="bi bi-chat-square-heart" viewBox="0 0 16 16">
+            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12ZM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Z"/>
+            <path d="M8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+          </svg></a>
+        </div>
+      </div>
+      <div class="url_box bg_coral">
+        <div class="box_inner">
+          <h2 class="h3 fw-bold">Story:US</h2>
+          <p class="p-1 fs-5 minus_margin_bottom">올해 컴퓨터공학과 학생회에 대한 이야기</p>
+          <a class="bi bi-book fs-1 story" href="views\intro\intro.ejs"></a>
+        </div>
+      </div>
+      <div class="url_box url_box_2 bg_light">
+        <div class="box_inner">
+          <h2 class="h3 text-uppercase fw-bold">Instagram</h3>
+          <p class="p-2 fs-5">무브먼트 학생회 인스타그램으로 바로가기</p>
+          <a href="https://www.instagram.com/seoultech_com/">
+            <img class="insta_img col align-self-end" src="https://img.icons8.com/fluency/48/null/instagram-new.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ad">
+      <div>
+        <h3>광고</h3>
+        <div id="ad"></div>
+      </div>
+    </section>
