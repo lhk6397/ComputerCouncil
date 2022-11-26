@@ -12,7 +12,6 @@ body {
   url("/pictures/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
- 
 }
 
 .minus_margin_bottom {
@@ -88,27 +87,74 @@ body {
   width: 20%;
 }
 
-
-
-
-
-
-
-.ad {
+.intro_notice {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  text-align: center;
-}
-
-#ad {
-  border: solid 4px gold;
-  border-radius: 3px;
-  width: 1024px;
-  height: 256px;
-}
-
-.basic {
-  width: 100%;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
   background-color: white;
+  padding: 30px;
+}
+
+.gallery {
+  width: 25%;
+}
+
+.gallery_body {
+  border: 2px solid blueviolet;
+  background-color: whitesmoke;
+}
+
+.gallery_head {
+  display: inline-block;
+  background-color: blueviolet;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.gallery .carousel-caption {
+  left: 150px !important;
+ }
+ 
+.gallery.active .carousel-caption {
+  left: 150px !important;
+ }
+ 
+ .gallery.active.left .carousel-caption {
+  left: 150px !important;
+ }
+
+ .carousel-inner > .carousel-item > img {
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 300px;
+  object-fit: contain;
+} 
+
+.notice_body {
+  width: 60%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.notice_head {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border-bottom: solid 5px black;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 21px;
+  border: 0;
+}
+
+.bi:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.table_padding {
+  padding-top: 22px;
 }

@@ -80,6 +80,10 @@ app.get("/notice", (req, res) => {
   }
 });
 
+app.get("/event", (req, res) => {
+  res.render("notice/event", { notice });
+})
+
 /* Community
 
 GET    /community                - show all posts
