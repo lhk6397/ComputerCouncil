@@ -10,7 +10,7 @@ const routes = {
     },
     'community': {
         'name': 'community',
-        'subroutes': ['community', 'faq', 'contact']
+        'subroutes': ['board', 'faq', 'contact']
     },
     'reference': {
         'name': 'reference',

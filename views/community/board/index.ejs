@@ -1,0 +1,33 @@
+<% layout('community/index') -%>
+
+<h1>All posts</h1>
+<div>
+  <button type="button" class="btn btn-primary">
+    <a href="/community/board/new">게시글 작성하기</a>
+  </button>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">제목</th>
+      <th scope="col">작성자</th>
+      <th scope="col">작성일</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(const [i, post] of posts.entries()) { %>
+    <tr>
+      <th scope="row"><%= i %></th>
+      <td>
+        <a class="primary" href="/community/board/<%= post._id %>"
+          ><%= post.title %></a
+        >
+      </td>
+      <td><%= post.author %></td>
+      <td><%= post.date %></td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
