@@ -28,16 +28,17 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    font-size: 19px;
+    font-size: 21px;
     font-family: "Staatliches", sans-serif;
     border: solid 1px white;
-    margin-right: 40px;
+    margin-right: 50px;
     background-color: white;
     cursor: pointer;
   }
   
   #headLogo {
     display: flex;
+    margin-left: -10px;
     justify-content: space-around;
     align-items: center;
     background-color: white;
