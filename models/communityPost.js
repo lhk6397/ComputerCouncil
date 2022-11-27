@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Comment = require("./comment");
-const PostSchema = new Schema({
+const Comment = require("./communityComment");
+
+const CommunityPostSchema = new Schema({
   title: String,
   contents: String,
   author: String,
@@ -9,19 +10,19 @@ const PostSchema = new Schema({
   comments: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Comment",
+      ref: "CommunityComment",
     },
   ],
 });
 
-PostSchema.post("findOneAndDelete", async function (doc) {
+CommunityPostSchema.post("findOneAndDelete", async function (doc) {
   if (doc) {
     await Comment.deleteMany({
       _id: {
-        $in: doc.comments,
+        $in: doc.CommunityComment,
       },
     });
   }
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("CommunityPost", CommunityPostSchema);

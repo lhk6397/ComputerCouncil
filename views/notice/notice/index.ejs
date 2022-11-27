@@ -1,13 +1,13 @@
-<% layout('community/index') -%>
+<% layout('notice/index') -%>
 <link rel="stylesheet" href="/stylesheets/aside-tab.css" />
 <link rel="stylesheet" href="/stylesheets/notice.css" />
 
 <div class="container tab-pane show active">
   <div class="notice_head">
-    <h2 class="notice_title h1"><%- community.subroutes[0] %></h2>
+    <h2 class="notice_title h1"><%- notice.subroutes[0] %></h2>
   </div>
   <button type="button" class="btn btn-success mb-3">
-    <a href="/community/board/new">게시글 작성하기</a>
+    <a href="/notice/notice/new">게시글 작성하기</a>
   </button>
   <div class="table_padding">
     <table class="table table-border table-hover" style="table-layout: fixed">
@@ -41,7 +41,7 @@
         <tr>
           <th class="text-center" scope="row"><%= i + 1 %></th>
           <th class="text-center">
-            <a class="primary" href="/community/board/<%= post._id %>"
+            <a class="primary" href="/notice/notice/<%= post._id %>"
               ><%= post.title %></a
             >
           </th>

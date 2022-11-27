@@ -1,0 +1,54 @@
+<% layout('notice/index') -%>
+
+<div class="row">
+  <h1 class="text-center">New Post</h1>
+  <div class="col-6 offset-3">
+    <form
+      action="/notice/notice"
+      method="POST"
+      novalidate
+      class="needs-validation"
+    >
+      <div class="mb-3">
+        <label class="form-label" for="title">제목</label>
+        <input
+          class="form-control"
+          type="text"
+          id="title"
+          name="post[title]"
+          required
+        />
+        <div class="valid-feedback">Looks Good!</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="author">Author</label>
+        <input
+          class="form-control"
+          type="text"
+          id="image"
+          name="post[author]"
+          required
+        />
+        <div class="valid-feedback">Looks Good!</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="contents">내용</label>
+        <textarea
+          class="form-control"
+          type="text"
+          id="contents"
+          name="post[contents]"
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks Good!</div>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-success">작성하기</button>
+      </div>
+    </form>
+    <footer>
+      <a href="/notice/notice/index">모든 게시글 보기</a>
+    </footer>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+.notice_title {
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+  border-radius: 5px;
+  border-right: solid 3px slateblue;
+  border-left: solid 3px slateblue;
+}
+
+.notice_head {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 70px;
+  padding-bottom: 80px;
+}
+
+th {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+thead {
+  border-bottom: 2px solid black;
+}
+
+.table_padding {
+  padding-bottom: 120px;
+}
+
+.event_title {
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+  border-radius: 5px;
+  border-right: solid 3px lightcoral;
+  border-left: solid 3px lightcoral;
+}
+
+.event_link:hover {
+  color: black;
+}
+
+.event {
+  padding-top: 50px;
+}
+
+.event_box {
+  display: flex;
+  width: 500px;
+  height: 200px;
+}

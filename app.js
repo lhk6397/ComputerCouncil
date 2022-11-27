@@ -8,8 +8,10 @@ const User = require("./models/user");
 const Routes = require("./models/route");
 const methodOverride = require("method-override");
 
-const communityBoard = require("./routes/communityBoard");
-const communityBoardReview = require("./routes/communityBoardReview");
+const communityBoardRoutes = require("./routes/communityBoard");
+const communityBoardCommentRoutes = require("./routes/communityBoardComment");
+const noticeRoutes = require("./routes/notice");
+const noticeCommentRoutes = require("./routes/noticeComment");
 
 const PORT = 3000;
 
@@ -69,20 +71,23 @@ app.get("/notice", (req, res) => {
   const { category } = req.query;
   switch (category) {
     case "notice":
-      res.render("notice/notice", { notice });
+      res.redirect("/notice/notice");
       break;
     case "event":
       res.render("notice/event", { notice });
       break;
     default:
-      res.redirect("notice?category=notice");
+      res.redirect("/notice/notice");
       break;
   }
 });
 
+app.use("/notice/notice", noticeRoutes);
+app.use("/notice/notice/:id/comments", noticeCommentRoutes);
+
 app.get("/event", (req, res) => {
   res.render("notice/event", { notice });
-})
+});
 
 /* Community
 
@@ -115,8 +120,8 @@ app.get("/community", (req, res) => {
   }
 });
 
-app.use("/community/board", communityBoard);
-app.use("/community/board/:id/comments", communityBoardReview);
+app.use("/community/board", communityBoardRoutes);
+app.use("/community/board/:id/comments", communityBoardCommentRoutes);
 
 /* Reference */
 app.get("/reference", (req, res) => {
