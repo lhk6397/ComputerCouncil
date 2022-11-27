@@ -1,14 +1,24 @@
 <% layout('layouts/boilerplate') -%>
   <% block('head').append('<link rel="stylesheet" href="/stylesheets/home.css">') %>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <div class="banner">
       <div class="banner_inner">
-        <p>마음을 움직이는 학생회</p>
-        <p class="movement">무브먼트</p>
+        <p class="banner_movement">마음을 움직이는 학생회</p>
+        <p class="movement banner_movement">무브먼트</p>
       </div>
     </div>
+    <script>
+      const introText = document.querySelectorAll(".banner_movement");
 
-    <section class="board">
+      window.onload = () => {
+        let timer = 100;
+        introText.forEach((item) => {
+          item.style.animation = `fade 500ms ${(timer += 50)}ms forwards`;
+        });
+      };
+    </script>
+
+    <section class="board animate__animated animate__fadeInUp">
       <div class="url_box bg-info">
         <div class="box_inner">
           <h2 class="h3 p-1 fw-bold">Employment</h2>
@@ -76,14 +86,15 @@
         </div>
 
         <div class="table_padding">
-          <table class="table table-borderless">
+          <table class="table table-borderless table-hover" style="table-layout: fixed;">
             <tbody>
               <tr>
-                <th scope="row" class="text-center">[공지]</th>
+                <th scope="row" class="text-center" style="width: 10%;">[공지]</th>
                 <a href="">
-                  <th scope="row">소프트웨어 직무역량강화 워크숍 안내</th>
+                  <th scope="row" style="width: 70%;" title="소프트웨어 직무역량강화 워크숍 안내">소프트웨어 직무역량강화 워크숍 안내
+                  </th>
                 </a>
-                <th scope="row">2022.11.23</th>
+                <th scope="row" style="width: 107px;">2022.11.23</th>
               </tr>
               <tr>
                 <th scope="row" class="text-center">[공지]</th>
@@ -92,7 +103,7 @@
               </tr>
               <tr>
                 <th scope="row" class="text-center"></th>
-                <th scope="row">2022학년도 2학기 기말고사 공지</th>
+                <th scope="row" class="text-start">2022학년도 2학기 기말고사 공지</th>
                 <th scope="row">2022.11.25</th>
               </tr>
               <tr>
@@ -102,20 +113,24 @@
               </tr>
               <tr>
                 <th scope="row" class="text-center"></th>
-                <th scope="row">2022학년도 진로활동 우수 장학금 지급 계획 안내</th>
+                <th scope="row">2022학년도 진로활동 우수 장학금 지급 계획 안내(21~22학번 신청)</th>
                 <th scope="row">2022.10.28</th>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+
       <div class="gallery">
-        <h2 class="fs-4 gallery_head">Gallery</h2>
+        <h2 class="fs-3 gallery_head">Gallery</h2>
         <div id="carouselExampleControls" class="gallery_body carousel carousel-dark slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">

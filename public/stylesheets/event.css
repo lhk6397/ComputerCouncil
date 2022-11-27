@@ -1,0 +1,20 @@
+.event_title {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    border-radius: 5px;
+    border-right: solid 3px lightcoral;
+    border-left: solid 3px lightcoral;
+}
+
+.event_head {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 70px;
+    padding-bottom: 80px;
+}
+
+.event_link:hover {
+    color: black;
+}
