@@ -1,7 +1,11 @@
 <% layout('notice/index') -%>
-<link rel="stylesheet" href="/stylesheets/aside-tab.css">
+    <link rel="stylesheet" href="/stylesheets/aside-tab.css">
+    <link rel="stylesheet" href="/stylesheets/notice.css">
 
-<div class="container">
-    <h2>notice</h2>
-    
-</div>
+    <div class="container tab-pane show active">
+        <div class="notice_head">
+            <h2 class="notice_title h1">
+                <%- notice.subroutes[0] %>
+            </h2>
+        </div>
+    </div>

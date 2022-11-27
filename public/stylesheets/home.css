@@ -39,10 +39,21 @@ body {
   text-align: center;
   font-family: 'Black Han Sans', sans-serif;
   line-height: 1;
+ 
 }
 
 .movement {
   font-size: 78px;
+}
+
+.banner_movement {
+  opacity: 0;
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
 }
 
 .board {
@@ -108,8 +119,12 @@ body {
 .gallery_head {
   display: inline-block;
   background-color: blueviolet;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  color: white;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  font-family: "Staatliches", sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .gallery .carousel-caption {
@@ -144,6 +159,12 @@ body {
   justify-content: space-between;
   border-bottom: solid 5px black;
   border-radius: 5px;
+}
+
+th {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .btn {
