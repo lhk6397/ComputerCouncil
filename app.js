@@ -1,17 +1,21 @@
 const express = require("express");
-// test 2022-11-16
 const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
+const session = require("express-session");
+const flash = require("connect-flash");
 const User = require("./models/user");
 const Routes = require("./models/route");
 const methodOverride = require("method-override");
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
 
 const communityBoardRoutes = require("./routes/communityBoard");
 const communityBoardCommentRoutes = require("./routes/communityBoardComment");
 const noticeRoutes = require("./routes/notice");
 const noticeCommentRoutes = require("./routes/noticeComment");
+const userRoutes = require("./routes/users");
 
 const PORT = 3000;
 
@@ -25,6 +29,28 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
+const sessionConfig = {
+  secret: "badSecret",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    httpOnly: true,
+    expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+  },
+};
+
+app.use(session(sessionConfig)); // app.use(session())이 app.use(passport.session()) 전에 있어야함.
+app.use(flash());
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+// passportLocalMongoose 덕분에 아래의 두 메서드가 추가
+passport.serializeUser(User.serializeUser()); // passport에게 사용자를 어떻게 직렬화하는지 알려주고, 직렬화는 어떻게 데이터를 얻고 세션에서 사용자를 저장하는지를 참조
+passport.deserializeUser(User.deserializeUser());
+
 mongoose
   .connect("mongodb://localhost:27017/computer-council")
   .then(() => {
@@ -35,19 +61,20 @@ mongoose
     console.log(err);
   });
 
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
+});
+
 app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-
-app.post("/login", async (req, res) => {
-  const user = new User(req.body.user);
-  await user.save();
-  res.redirect(`/?id=${user._id}`);
-});
+app.use("/", userRoutes);
+app.use("/notice/notice", noticeRoutes);
+app.use("/notice/notice/:id/comments", noticeCommentRoutes);
 
 app.get("/intro", (req, res) => {
   const { category } = req.query;
@@ -81,9 +108,6 @@ app.get("/notice", (req, res) => {
       break;
   }
 });
-
-app.use("/notice/notice", noticeRoutes);
-app.use("/notice/notice/:id/comments", noticeCommentRoutes);
 
 app.get("/event", (req, res) => {
   res.render("notice/event", { notice });

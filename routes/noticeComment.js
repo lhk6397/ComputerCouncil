@@ -10,6 +10,7 @@ router.post("/", async (req, res) => {
   post.comments.push(comment);
   await comment.save();
   await post.save();
+  req.flash("success", "Created new comment!");
   res.redirect(`/notice/notice/${post._id}`);
 });
 
@@ -17,6 +18,7 @@ router.delete("/:commentId", async (req, res) => {
   const { id, commentId } = req.params;
   await Post.findByIdAndUpdate(id, { $pull: { comments: commentId } });
   await Comment.findByIdAndDelete(commentId);
+  req.flash("success", "Successfully deleted comment");
   res.redirect(`/notice/notice/${id}`);
 });
 

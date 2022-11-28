@@ -5,17 +5,15 @@
   <div class="col-6 offset-3">
     <form action="/login" method="POST" novalidate class="needs-validation">
       <div class="mb-3">
-        <label class="form-label" for="name">Name</label>
+        <label class="form-label" for="username">Username</label>
         <input
           class="form-control"
           type="text"
-          id="name"
-          name="user[name]"
+          id="username"
+          name="username"
           required
         />
-        <div class="valid-feedback">
-          Looks Good!
-        </div>
+        <div class="valid-feedback">Looks Good!</div>
       </div>
       <div class="mb-3">
         <label class="form-label" for="studentID">Student-ID</label>
@@ -23,28 +21,24 @@
           class="form-control"
           type="text"
           id="studentID"
-          name="user[studentID]"
+          name="studentID"
           minlength="8"
           maxlength="8"
           required
         />
-        <div class="valid-feedback">
-          Looks Good!
-        </div>
+        <div class="valid-feedback">Looks Good!</div>
       </div>
 
       <div class="mb-3">
         <label class="form-label" for="password">Password</label>
         <input
           class="form-control"
-          type="text"
+          type="password"
           id="password"
-          name="user[password]"
+          name="password"
           required
         />
-        <div class="valid-feedback">
-          Looks Good!
-        </div>
+        <div class="valid-feedback">Looks Good!</div>
       </div>
       <div class="mb-3 d-grid justify-content-md-end">
         <button class="btn btn-success">Login</button>
