@@ -13,6 +13,10 @@ const NoticePostSchema = new Schema({
       ref: "NoticeComment",
     },
   ],
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 NoticePostSchema.post("findOneAndDelete", async function (doc) {
