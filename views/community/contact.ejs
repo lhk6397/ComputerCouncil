@@ -1,2 +1,64 @@
 <% layout('community/index') -%>
-<h1>contact</h1>
+    <link rel="stylesheet" href="/stylesheets/aside-tab.css">
+    <link rel="stylesheet" href="/stylesheets/contact.css">
+    <div class="container tab-pane show active">
+        <div class="contact">
+            <h2 class="h2 contact_head">
+                <%- community.subroutes[2] %>
+            </h2>
+        </div>
+        <div class="map">
+            <h2 class="h3 map_title">&nbsp;오시는 길</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1579.9066593167572!2d127.08021905688818!3d37.63007879021042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbbeb8e4d5a8f%3A0x60c1b03daf28aeb0!2sMirae%20Hall!5e0!3m2!1sko!2skr!4v1669915860708!5m2!1sko!2skr"
+                width="100%" height="350" allowfullscreen="" loading="lazy" class="map_body"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+          
+        </div>
+        <div class="rough_map mt-3 pt-5">
+            <h2 class="h3">&nbsp;대중교통 상세 정보</h2>
+            <img src="/pictures/rough_map.PNG" class="rough_map_body" alt="약도">
+            <div>
+                <p>주소 : [01811] 서울 노원구 공릉로 232 서울과학기술대학교 컴퓨터공학과 미래관</p>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row">지하철 이용</th>
+                    <td colspan="2">
+                        <ul>
+                            <li>
+                                <p class="li_first">7호선 공릉(서울과학기술대)역 2번 출구</p>
+                                <p>도보 10분 / 마을버스 03번, 교내 경유 마을버스 13번 이용(5분 소요)</p>
+                            </li>
+                            <li>
+                                <p class="li_first">1호선, 6호선 석계역 1번, 4번, 6번 출구</p>
+                                <p>마을버스 03번, 교내 경유 마을버스 13번 이용(15분 소요)</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">버스이용</th>
+                    <td colspan="2">
+                        <ul>
+                            <li>
+                                <p class="li_first">지선버스(초록버스) - 1136번, 1141번, 1224번, 1227번</p>
+                            </li>
+                            <li>
+                                <p class="li_first">마을버스 - 03번</p>
+                                <p>노 선 : 석계역(1,4,6번 출구) - 공릉(서울과학기술대)역(2번 출구) - 서울과학기술대학교 정문</p>
+                                <p>운행시간 : 첫차 05:30 / 막차 00:10</p>
+                            </li>
+                            <li>
+                                <p class="li_first">교내 경유 마을버스 - 13번</p>
+                                <p>노 선 : 석계역(1,4,6번 출구) - 공릉(서울과학기술대)역(2번 출구) - 서울과학기술대학교(교내 : 정문 - 다산관 - 붕어방 - 다산관 -
+                                주차로터리)</p>
+                                <p>운행시간 : 첫차 05:30 / 막차 00:10</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>

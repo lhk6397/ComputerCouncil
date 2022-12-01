@@ -1,0 +1,76 @@
+.contact {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    padding-top: 55px;
+    padding-bottom: 30px;
+}
+
+.contact_head {
+    font-size: 36px;
+    font-weight: bold;
+    width: 60%;
+    border-bottom: solid 4px yellowgreen;
+    border-radius: 4px;
+}
+
+.map {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.map_title {
+    justify-content:flex-start;
+}
+
+.map_body {
+    justify-content: center;
+}
+
+.rough_map img {
+    width: 90%;
+    object-fit:cover;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+}
+.rough_map {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.rough_map_body {
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: center;
+}
+
+.table {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 120px;
+    border-top: 3px solid darkblue;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid lightgrey;
+    border-collapse: collapse;
+}
+
+.table th {
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: gainsboro;
+    font-weight: bold;
+    font-size: 21px;
+}
+ul li {
+    list-style:disc;
+    margin-left: 30px;
+    font-size: 18px;
+}
+.li_first {
+    font-weight: bold;
+}
