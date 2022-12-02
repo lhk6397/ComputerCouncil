@@ -10,7 +10,9 @@
         <li class="list-group-item text-muted">
           Submitted by <%= post.author.username %></li>
         </li>
-        <li class="list-group-item"><%= post.date %></li>
+        <li class="list-group-item">
+          <%= post.date.toLocaleDateString('en-US') %>
+        </li>
       </ul>
       <div class="card-body">
         <p class="card-title"><%= post.contents%></p>
@@ -44,7 +46,6 @@
       novalidate
     >
       <div class="mb-3">
-        <label class="form-label" for="contents">내용</label>
         <textarea
           class="form-control"
           name="comment[contents]"

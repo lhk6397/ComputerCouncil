@@ -1,10 +1,10 @@
-const Routes = require("../models/route");
+const Routes = require("../public/javascripts/route");
 const Post = require("../models/communityPost");
 
 const { community } = Routes;
 
 module.exports.index = async (req, res) => {
-  const posts = await Post.find({});
+  const posts = await Post.find({}).populate("author");
   res.render("community/board/index", { community, posts });
 };
 

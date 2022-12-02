@@ -45,8 +45,10 @@
               ><%= post.title %></a
             >
           </th>
-          <th class="text-center"><%= post.author %></th>
-          <th class="text-center"><%= post.date %></th>
+          <th class="text-center"><%= post.author.username %></th>
+          <th class="text-center">
+            <%= post.date.toLocaleDateString("en-US") %>
+          </th>
         </tr>
         <% } %>
       </tbody>

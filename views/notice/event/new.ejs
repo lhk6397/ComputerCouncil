@@ -1,10 +1,10 @@
-<% layout('community/index') -%>
+<% layout('notice/index') -%>
 
 <div class="row">
-  <h1 class="text-center">Edit Post</h1>
+  <h1 class="text-center">New Post</h1>
   <div class="col-6 offset-3">
     <form
-      action="/community/board/<%= post._id %>?_method=PUT"
+      action="/notice/event"
       method="POST"
       novalidate
       class="needs-validation"
@@ -16,7 +16,6 @@
           type="text"
           id="title"
           name="post[title]"
-          value="<%= post.title %>"
           required
         />
         <div class="valid-feedback">Looks Good!</div>
@@ -30,17 +29,15 @@
           id="contents"
           name="post[contents]"
           required
-        >
-<%= post.contents %></textarea
-        >
+        ></textarea>
         <div class="valid-feedback">Looks Good!</div>
       </div>
       <div class="mb-3">
-        <button class="btn btn-success">수정하기</button>
+        <button class="btn btn-success">작성하기</button>
       </div>
     </form>
     <footer>
-      <a href="/community/board/index">모든 게시글 보기</a>
+      <a href="/notice/event/index">모든 게시글 보기</a>
     </footer>
   </div>
 </div>

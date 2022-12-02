@@ -6,7 +6,8 @@ const ejsMate = require("ejs-mate");
 const session = require("express-session");
 const flash = require("connect-flash");
 const User = require("./models/user");
-const Routes = require("./models/route");
+const Routes = require("./public/javascripts/route");
+const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -15,6 +16,8 @@ const communityBoardRoutes = require("./routes/communityBoard");
 const communityBoardCommentRoutes = require("./routes/communityBoardComment");
 const noticeRoutes = require("./routes/notice");
 const noticeCommentRoutes = require("./routes/noticeComment");
+const eventRoutes = require("./routes/event");
+const eventCommentRoutes = require("./routes/eventComment");
 const userRoutes = require("./routes/users");
 
 const PORT = 3000;
@@ -75,6 +78,8 @@ app.get("/", (req, res) => {
 app.use("/", userRoutes);
 app.use("/notice/notice", noticeRoutes);
 app.use("/notice/notice/:id/comments", noticeCommentRoutes);
+app.use("/notice/event", eventRoutes);
+app.use("/notice/event/:id/comments", eventCommentRoutes);
 
 app.get("/intro", (req, res) => {
   const { category } = req.query;
@@ -101,16 +106,12 @@ app.get("/notice", (req, res) => {
       res.redirect("/notice/notice");
       break;
     case "event":
-      res.render("notice/event", { notice });
+      res.redirect("/notice/event");
       break;
     default:
       res.redirect("/notice/notice");
       break;
   }
-});
-
-app.get("/event", (req, res) => {
-  res.render("notice/event", { notice });
 });
 
 /* Community
@@ -160,8 +161,14 @@ app.get("/reference", (req, res) => {
   }
 });
 
-app.all("*", (req, res) => {
-  res.status(404).render("404");
+app.all("*", (req, res, next) => {
+  next(new ExpressError("Page Not Found", 404));
+});
+
+app.use((err, req, res, next) => {
+  const { statusCode = 500 } = err;
+  if (!err.message) err.message = "Oh No, Something Went Wrong!";
+  res.status(statusCode).render("error", { err });
 });
 
 app.listen(PORT, () => {

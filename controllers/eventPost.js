@@ -1,14 +1,14 @@
 const Routes = require("../public/javascripts/route");
-const Post = require("../models/noticePost");
+const Post = require("../models/eventPost");
 const { notice } = Routes;
 
 module.exports.index = async (req, res) => {
   const posts = await Post.find({}).populate("author");
-  res.render("notice/notice/index", { notice, posts });
+  res.render("notice/event/index", { notice, posts });
 };
 
 module.exports.renderNewForm = (req, res) => {
-  res.render("notice/notice/new", { notice });
+  res.render("notice/event/new", { notice });
 };
 
 module.exports.createPost = async (req, res) => {
@@ -16,7 +16,7 @@ module.exports.createPost = async (req, res) => {
   post.author = req.user._id;
   await post.save();
   req.flash("success", "Successfully made a new post!");
-  res.redirect(`/notice/notice/${post._id}`);
+  res.redirect(`/notice/event/${post._id}`);
 };
 
 module.exports.showPost = async (req, res) => {
@@ -30,9 +30,9 @@ module.exports.showPost = async (req, res) => {
     .populate("author");
   if (!post) {
     req.flash("error", "Cannot find that post!");
-    return res.redirect("notice/notice");
+    return res.redirect("/notice/event");
   }
-  res.render("notice/notice/show", { notice, post });
+  res.render("notice/event/show", { notice, post });
 };
 
 module.exports.updatePost = async (req, res) => {
@@ -41,14 +41,14 @@ module.exports.updatePost = async (req, res) => {
     ...req.body.post,
   });
   req.flash("success", "Successfully updated post!");
-  res.redirect(`/notice/notice/${post._id}`);
+  res.redirect(`/notice/event/${post._id}`);
 };
 
 module.exports.deletePost = async (req, res) => {
   const { id } = req.params;
   await Post.findByIdAndDelete(id);
   req.flash("success", "Successfully deleted post");
-  res.redirect(`/notice/notice`);
+  res.redirect(`/notice/event`);
 };
 
 module.exports.renderEditForm = async (req, res) => {
@@ -56,7 +56,7 @@ module.exports.renderEditForm = async (req, res) => {
   const post = await Post.findById({ _id: id });
   if (!post) {
     req.flash("error", "Cannot find that post!");
-    return res.redirect("notice/notice");
+    return res.redirect("notice/event");
   }
-  res.render("notice/notice/edit", { notice, post });
+  res.render("notice/event/edit", { notice, post });
 };

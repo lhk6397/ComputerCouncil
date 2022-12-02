@@ -3,7 +3,12 @@
 <div class="row">
   <h1 class="text-center">New Post</h1>
   <div class="col-6 offset-3">
-    <form action="/community/board" method="POST" novalidate class="needs-validation">
+    <form
+      action="/community/board"
+      method="POST"
+      novalidate
+      class="needs-validation"
+    >
       <div class="mb-3">
         <label class="form-label" for="title">제목</label>
         <input
@@ -13,24 +18,9 @@
           name="post[title]"
           required
         />
-        <div class="valid-feedback">
-          Looks Good!
-        </div>
+        <div class="valid-feedback">Looks Good!</div>
       </div>
-      <div class="mb-3">
-        <label class="form-label" for="author">Author</label>
-        <input
-          class="form-control"
-          type="text"
-          id="image"
-          name="post[author]"
-          required
-        />
-        <div class="valid-feedback">
-          Looks Good!
-        </div>
-      </div>
-      
+
       <div class="mb-3">
         <label class="form-label" for="contents">내용</label>
         <textarea
@@ -40,9 +30,7 @@
           name="post[contents]"
           required
         ></textarea>
-        <div class="valid-feedback">
-          Looks Good!
-        </div>
+        <div class="valid-feedback">Looks Good!</div>
       </div>
       <div class="mb-3">
         <button class="btn btn-success">작성하기</button>

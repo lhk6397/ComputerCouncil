@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
-const comments = require("../controllers/noticeComment");
+const comments = require("../controllers/eventComment");
+
 const {
   isLoggedIn,
   validateComment,

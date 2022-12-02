@@ -1,13 +1,24 @@
-<% layout('community/index') -%>
+<% layout('notice/index') -%>
+
 <link rel="stylesheet" href="/stylesheets/aside-tab.css" />
 <link rel="stylesheet" href="/stylesheets/notice.css" />
+<link rel="stylesheet" href="/stylesheets/event.css" />
 
 <div class="container tab-pane show active">
   <div class="notice_head">
-    <h2 class="notice_title h1"><%- community.subroutes[0] %></h2>
+    <h2 class="notice_title h1"><%- notice.subroutes[1] %></h2>
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a
+      class="d-inline badge bg-info text-wrap event_link"
+      href="https://instabio.cc/3031704rI3OvK"
+      target="_blank"
+    >
+      ☞진행중인 이벤트 신청 링크</a
+    >
   </div>
   <button type="button" class="btn btn-success mb-3">
-    <a href="/community/board/new">게시글 작성하기</a>
+    <a href="/notice/event/new">게시글 작성하기</a>
   </button>
   <div class="table_padding">
     <table class="table table-border table-hover" style="table-layout: fixed">
@@ -41,7 +52,7 @@
         <tr>
           <th class="text-center" scope="row"><%= i + 1 %></th>
           <th class="text-center">
-            <a class="primary" href="/community/board/<%= post._id %>"
+            <a class="primary" href="/notice/event/<%= post._id %>"
               ><%= post.title %></a
             >
           </th>
