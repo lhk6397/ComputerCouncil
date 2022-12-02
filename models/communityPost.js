@@ -5,7 +5,10 @@ const Comment = require("./communityComment");
 const CommunityPostSchema = new Schema({
   title: String,
   contents: String,
-  author: String,
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   date: { type: Date, default: Date.now() },
   comments: [
     {

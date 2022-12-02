@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 
 const CommunityCommentSchema = new Schema({
   contents: String,
-  author: String,
-  // comment_date: {type: Date, default: Date.now()}
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 module.exports = mongoose.model("CommunityComment", CommunityCommentSchema);
