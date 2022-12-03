@@ -66,7 +66,7 @@
     font-weight: bold;
     font-size: 21px;
 }
-ul li {
+.container ul li {
     list-style:disc;
     margin-left: 30px;
     font-size: 18px;
