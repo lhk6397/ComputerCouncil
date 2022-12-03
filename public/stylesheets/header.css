@@ -1,65 +1,130 @@
 .header {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    background-color: white;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-  }
-  #blue {
-    height: 3px;
-    width: 33.3333%;
-    background-color: #0a1f62;
-  }
-  #red {
-    height: 3px;
-    width: 33.3333%;
-    background-color: #b91a1a;
-  }
-  #grey {
-    height: 3px;
-    width: 33.3333%;
-    background-color: #8f8f8f;
-  }
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+}
+
+#blue {
+  height: 3px;
+  width: 33.3333%;
+  background-color: #0a1f62;
+}
+
+#red {
+  height: 3px;
+  width: 33.3333%;
+  background-color: #b91a1a;
+}
+
+#grey {
+  height: 3px;
+  width: 33.3333%;
+  background-color: #8f8f8f;
+}
+
+.headLogo___nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-size: 21px;
+  font-family: "Staatliches", sans-serif;
+  border: solid 1px white;
+  margin-right: 50px;
+  background-color: white;
+  cursor: pointer;
+}
+
+#school_logo {
+  margin-left: 30px;
+  width: 180px;
+  vertical-align: middle;
+  background-color: white;
+}
+
+#next_logo {
+  font-weight: 600;
+  margin-block: 0 auto;
+  background-color: white;
+}
+
+#login {
+  width: 30px;
+  margin-left: 10px;
+  background-color: white;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/**/
+.header_menu {
+  font-family: "Staatliches", sans-serif;
+  font-size: 21px;
+  justify-content: space-between;
+  flex-flow: row wrap; 
+  display: flex;
+  height: fit-content;
+}
+
+.header_menu:after {
+  width: 100%;
+}
+
+.header_main > li {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100%;
+  line-height: 70px;
+  text-align: center;
+  background: white;
+}
+
+.main_li > a:hover {
+  color: tomato;
+}
+
+.header_main > li a {
+  transition: all 0.2s;
+}
+
+.sub {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  background: rgba(248, 235, 51, 0.85);
+  color: black;
   
-  .headLogo___nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    font-size: 21px;
-    font-family: "Staatliches", sans-serif;
-    border: solid 1px white;
-    margin-right: 50px;
-    background-color: white;
-    cursor: pointer;
-  }
-  
-  #headLogo {
-    display: flex;
-    margin-left: -10px;
-    justify-content: space-around;
-    align-items: center;
-    background-color: white;
-  }
-  
-  #schoolLogo {
-    margin-left: 30px;
-    width: 180px;
-    /* height: ; */
-    vertical-align: middle;
-    background-color: white;
-  }
-  #nextLogo {
-    font-weight: 600;
-    margin-block: 0 auto;
-    background-color: white;
-  }
-  
-  #login {
-    width: 30px;
-    margin-left: 10px;
-    background-color: white;
-    vertical-align: middle;
-  }
+}
+
+.sub > li {
+  border-top: 1px solid rgba(248, 235, 51, 0.568);
+}
+
+.sub > li a:hover {
+  color: whitesmoke
+}
+
+#login_sub {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 12.5%;
+  z-index: 1;
+  width: 75%;
+  background: white;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: black;
+}
+
+#login_sub > li {
+  border-top: 1px solid lightsteelblue;
+}

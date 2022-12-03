@@ -39,21 +39,15 @@ body {
   text-align: center;
   font-family: 'Black Han Sans', sans-serif;
   line-height: 1;
- 
+  
 }
+.banner_movement, .banner_movement_2  {
+  opacity: 0; 
+}
+
 
 .movement {
   font-size: 78px;
-}
-
-.banner_movement {
-  opacity: 0;
-}
-
-@keyframes fade {
-  to {
-    opacity: 1;
-  }
 }
 
 .board {

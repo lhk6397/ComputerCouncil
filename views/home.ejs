@@ -1,22 +1,22 @@
 <% layout('layouts/boilerplate') -%>
   <% block('head').append('<link rel="stylesheet" href="/stylesheets/home.css">') %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js">//자바스크립트 라이브러리</script>
+  <script src="//code.jquery.com/jquery-3.4.1.min.js">//jquery</script>
+
     <div class="banner">
       <div class="banner_inner">
         <p class="banner_movement">마음을 움직이는 학생회</p>
-        <p class="movement banner_movement">무브먼트</p>
+        <p class="movement banner_movement_2">무브먼트</p>
       </div>
     </div>
-    <script>
-      const introText = document.querySelectorAll(".banner_movement");
 
-      window.onload = () => {
-        let timer = 100;
-        introText.forEach((item) => {
-          item.style.animation = `fade 500ms ${(timer += 50)}ms forwards`;
-        });
-      };
+    <script>
+      $('.banner_movement')
+      $( document ).ready ( function () {
+        $(".banner_movement").animate({opacity: 1.0});
+        $(".banner_movement_2").delay(150).animate({opacity: 1.0});
+      })
     </script>
 
     <section class="board animate__animated animate__fadeInUp scroll-spy">
@@ -38,7 +38,7 @@
         <div class="box_inner">
           <h2 class="h3 fw-bold back-to-position to-down delay-0">Event🎉</h2>
           <p class="p-2 fs-5 back-to-position to-up delay-1">컴퓨터공학과 학우들을 위한 여러 이벤트 소식!</p>
-          <a href="/event"><svg class="fs-2 event_red back-to-position to-up delay-1" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+          <a href="/notice/event"><svg class="fs-2 event_red back-to-position to-up delay-1" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
               fill="currentcolor" class="bi bi-chat-square-heart" viewBox="0 0 16 16">
               <path
                 d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12ZM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Z" />
@@ -71,17 +71,18 @@
       </div>
     </section>
 
+    
     <script>
       const spyEls = document.querySelectorAll('.scroll-spy')
-spyEls.forEach(function(spyEl){
-  new ScrollMagic
-    .Scene({
-      triggerElement: spyEl, 
-      triggerHook: .85 
-    })
-    .setClassToggle(spyEl, 'show')
-    .addTo(new ScrollMagic.Controller()) // 필수!
-})
+      spyEls.forEach(function (spyEl) {
+        new ScrollMagic
+          .Scene({
+            triggerElement: spyEl,
+            triggerHook: .85
+          })
+          .setClassToggle(spyEl, 'show')
+          .addTo(new ScrollMagic.Controller()) // 필수!
+      })
     </script>
 
     <section class="intro_notice">
