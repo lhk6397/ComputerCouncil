@@ -2,13 +2,12 @@
 <link rel="stylesheet" href="/stylesheets/aside-tab.css" />
 <link rel="stylesheet" href="/stylesheets/notice.css" />
 
+
 <div class="container tab-pane show active">
   <div class="notice_head">
     <h2 class="notice_title h1"><%- community.subroutes[0] %></h2>
   </div>
-  <button type="button" class="btn btn-success mb-3">
-    <a href="/community/board/new">게시글 작성하기</a>
-  </button>
+  
   <div class="table_padding">
     <table class="table table-border table-hover" style="table-layout: fixed">
       <thead class="bg-light">
@@ -53,5 +52,8 @@
         <% } %>
       </tbody>
     </table>
+      <button type="button" class="btn btn-success mb-3">
+        <a href="/community/board/new">게시글 작성하기</a>
+      </button>
   </div>
 </div>

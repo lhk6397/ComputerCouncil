@@ -1,43 +1,80 @@
 <% layout('community/index') -%>
+  <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="/stylesheets/new.css" />
 
-<div class="row">
-  <h1 class="text-center">New Post</h1>
-  <div class="col-6 offset-3">
-    <form
-      action="/community/board"
-      method="POST"
-      novalidate
-      class="needs-validation"
-    >
-      <div class="mb-3">
-        <label class="form-label" for="title">제목</label>
-        <input
-          class="form-control"
-          type="text"
-          id="title"
-          name="post[title]"
-          required
-        />
-        <div class="valid-feedback">Looks Good!</div>
-      </div>
+  <div class="container row">
+    <h1 class="h1 text-center mt-5">New Post <p class="h4 display-p text-info">(on board)</p>
+    </h1>
+    <div class="return_btn">
+      <a href="/community/board" class="btn btn-secondary">모든 게시글 보기</a>
+    </div>
+    <div class="create_post">
+      <div class="w-75">
+        <form action="/community/board" method="POST" novalidate class="needs-validation" id="submit_form">
+          <div class="mb-3">
+            <label class="form-label" for="title">제목</label>
+            <input class="form-control form_title" type="text" id="title" name="post[title]" required />
+            <div class="valid-feedback">Looks Good!</div>
+          </div>
 
-      <div class="mb-3">
-        <label class="form-label" for="contents">내용</label>
-        <textarea
-          class="form-control"
-          type="text"
-          id="contents"
-          name="post[contents]"
-          required
-        ></textarea>
-        <div class="valid-feedback">Looks Good!</div>
+          <div class="mb-3">
+            <label class="form-label" for="contents">내용</label>
+            <textarea class="form-control w-100 form_contents" type="text" id="contents" name="post[contents]" required></textarea>
+            <div class="valid-feedback">Looks Good!</div>
+          </div>
+          <div class="mb-3 submit_btn">
+            <button class="btn btn-success disabled">작성하기</button>
+          </div>
+        </form>
       </div>
-      <div class="mb-3">
-        <button class="btn btn-success">작성하기</button>
-      </div>
-    </form>
-    <footer>
-      <a href="/community/board/index">모든 게시글 보기</a>
-    </footer>
+    </div>
   </div>
-</div>
+  <script>
+    //새로고침 시 확인 창
+      $(document).ready(function () {
+        // Warning
+        $(window).on('beforeunload', function () {
+          //do something
+          return "Any changes will be lost";
+        });
+        // Form Submit
+        $(document).on("submit", "form", function (event) {
+          // disable warning
+          $(window).off('beforeunload');
+        });
+      })
+
+  var content = $('.form-control');
+  //title check
+    content.keyup(function (e) {
+      var content1 = $('.form_contents').val();
+      var content2 = $('.form_title').val();
+      //console.log(content.length);
+      if(content1.length == 0 || content2.length == 0) {
+        $('.submit_btn').children('.btn').addClass('disabled');
+       
+      }
+      else {
+        $('.submit_btn').children('.btn').removeClass('disabled');
+ 
+      }
+    })
+    
+    //작성하기 버튼으로 글을 저장할 때 확인창
+    $('.submit_btn').click(function () {
+      if ($('.submit_btn').children('.btn').hasClass("disabled") === false) {
+        var res = confirm("현재 작성된 내용으로 글을 등록하시겠습니까?");
+        if (res) {
+          //yes
+          $("#submit_form").submit();
+        }
+        else {
+          //no
+          return false;
+        }
+      }
+      else {
+        ;
+      }
+    });
+  </script>

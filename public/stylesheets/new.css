@@ -1,0 +1,53 @@
+.create_post {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: center;
+}
+
+.display-p {
+    font-size: 1.5rem;
+    margin-top: -5px;
+}
+
+.form-label {
+    margin-left: 10px;
+}
+
+.submit_btn {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: end;
+}
+.btn-secondary {
+    background-color: whitesmoke;
+    color: gray;
+    font-size: 13px;
+}
+
+#contents {
+    min-height: 120px;
+    height: 40vh;
+    max-height: 70vh;
+}
+
+.btn-success {
+    background-color: white;
+    color: green;
+    font-weight: bold;
+    border: solid 2px yellowgreen;
+}
+
+.btn-success:hover {
+    background-color: yellowgreen;
+    border: solid 2px lightgreen;
+}
+
+.return_btn {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+    margin-bottom: 30px;
+}

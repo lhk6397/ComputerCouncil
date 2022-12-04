@@ -6,9 +6,13 @@
     margin-top: -40px;
 }
 
+.side_tap {
+    font-family: "Staatliches", sans-serif;
+}
+
 .sidebar {
     position: sticky;
-    font-family: "Staatliches", sans-serif;
+    font-family: sans-serif;
     left: 0px;
     font-size: 21px;
 }
@@ -32,6 +36,7 @@
     font-size: 26px;
     margin-top: 40px;
     border-bottom: solid 3px lightcoral;
+    font-family: "Staatliches", sans-serif;
     width: 180px;
 }
 
