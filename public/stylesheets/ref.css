@@ -1,0 +1,134 @@
+.ref_head {
+    width: 100%;
+    padding-top: 25px;
+}
+
+.study_club {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    color: black;
+}
+
+.h3 {
+    margin-left: 30px;
+    margin-top: 30px;
+    color: darkslateblue;
+    font-weight: bold;
+}
+
+.club_department>p {
+    margin-left: 15px;
+}
+
+.study_club>li {
+    width: 12%;
+    text-align: center;
+    border-radius: 5px;
+    border-width: 10px;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+p {
+    font-size: 15px;
+}
+
+.c1 {
+    background-color: red;
+}
+
+.c2 {
+    background-color: orange;
+}
+
+.c3 {
+    background-color: yellow;
+}
+
+.c4 {
+    background-color: green;
+}
+
+.c5 {
+    background-color: blue;
+}
+
+.c6 {
+    background-color: navy;
+}
+
+.c7 {
+    background-color: indigo;
+}
+
+.c8 {
+    background-color: black;
+    color: white;
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+}
+
+.introduce {
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.link:hover {
+    color: purple;
+}
+
+.import {
+    font-weight: 600;
+    color: crimson;
+}
+
+.map:hover {
+    color: lightcyan;
+}
+
+.map_img {
+    width: 100%;
+    display: flex;
+}
+
+.map_map {
+    width: 60%
+}
+
+th > p {
+    width: calc(1em / 0.6);
+    height: calc(1em / 0.6);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6em;
+    color: white;
+    border: 2px solid white;
+    background-color: black;
+}
+td {
+    font-size: 0.7em;
+}
+.etc div {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px;
+    justify-content: space-around;
+}
+
+.etc div a {
+    margin: 10px;
+    width: 150px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    border-width: 10px;
+    border: 2px solid darkslategray;
+    text-shadow: 1px 1px 1px gray;
+    cursor: pointer;
+}
+.etc div a:hover {
+    border-color: blue;
+    color: blue;
+    text-shadow: 1px 1px 1px yellow;
+}
