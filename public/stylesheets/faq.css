@@ -4,11 +4,15 @@
     justify-content: center;
     text-align: center;
 }
+.h1 {
+    font-family: "Staatliches", sans-serif;
+}
 
 .faq_head {
     font-size: 36px;
     margin: 40px;
     width: 60%;
+    font-family: "Staatliches", sans-serif;
     border-bottom: solid 4px greenyellow;
     padding-top: 15px;
     font-weight: bold;

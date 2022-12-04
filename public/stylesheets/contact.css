@@ -8,10 +8,10 @@
 }
 
 .contact_head {
-    font-size: 36px;
-    font-weight: bold;
+    font-size: 38px;
     width: 60%;
     border-bottom: solid 4px yellowgreen;
+    font-family: "Staatliches", sans-serif;
     border-radius: 4px;
 }
 

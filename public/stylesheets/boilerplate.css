@@ -29,6 +29,7 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
+	font-family: Arial, Helvetica, sans-serif;
 }
 html, body {
 	line-height: 2;
