@@ -108,17 +108,27 @@ body {
 .box_inner {
   text-align: center;
   align-items: center;
+  vertical-align: middle;
   width: 100%;
   height: 100%;
   padding-top: 15%;
 }
+.box_inner > p {
+  font-size: 1.5vw;
+  margin-bottom: 0.5vh;
+}
+.box_inner > .h3 {
+  margin-top: -15px;
+  font-size: 2.5vw;
+}
+
 
 .url_box_2 {
   top: 30px;
 }
 
 .insta_img {
-  width: 20%;
+  width: 30%;
 }
 
 .intro_notice {
