@@ -20,9 +20,6 @@ module.exports.register = async (req, res, next) => {
 };
 
 module.exports.renderLogin = (req, res) => {
-  if (req.query.preURL) {
-    req.session.preURL = req.query.preURL;
-  }
   res.render("users/login");
 };
 

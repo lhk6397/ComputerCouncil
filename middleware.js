@@ -14,7 +14,6 @@ module.exports.isLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
     req.flash("error", "You must be signed in first");
     req.session.preURL = req.originalUrl;
-    console.log(req.session);
     return res.redirect("/login");
   }
   next();
@@ -50,7 +49,6 @@ module.exports.isAuthor = async (req, res, next) => {
     case "board":
       post = await CommunityPost.findById(id);
       if (!post.author.equals(req.user._id)) {
-        // 작성자가 아니면 편집 요청 못하게
         req.flash("error", "You do not have permission to do that!");
         return res.redirect(`/${parsedURL[1]}/${parsedURL[2]}/${id}`);
       }
@@ -58,7 +56,6 @@ module.exports.isAuthor = async (req, res, next) => {
     case "notice":
       post = await NoticePost.findById(id);
       if (!post.author.equals(req.user._id)) {
-        // 작성자가 아니면 편집 요청 못하게
         req.flash("error", "You do not have permission to do that!");
         return res.redirect(`/${parsedURL[1]}/${parsedURL[2]}/${id}`);
       }
@@ -66,7 +63,6 @@ module.exports.isAuthor = async (req, res, next) => {
     case "event":
       post = await EventPost.findById(id);
       if (!post.author.equals(req.user._id)) {
-        // 작성자가 아니면 편집 요청 못하게
         req.flash("error", "You do not have permission to do that!");
         return res.redirect(`/${parsedURL[1]}/${parsedURL[2]}/${id}`);
       }
@@ -84,28 +80,25 @@ module.exports.isCommentAuthor = async (req, res, next) => {
     case "board":
       comment = await CommunityComment.findById(commentId);
       if (!comment.author.equals(req.user._id)) {
-        // 작성자가 아니면 편집 요청 못하게
         req.flash("error", "You do not have permission to do that!");
         return res.redirect(`/${parsedURL[1]}/${parsedURL[2]}/${id}`);
       }
-      return comment;
+      break;
     case "notice":
       comment = await NoticeComment.findById(commentId);
       if (!comment.author.equals(req.user._id)) {
-        // 작성자가 아니면 편집 요청 못하게
         req.flash("error", "You do not have permission to do that!");
         return res.redirect(`/${parsedURL[1]}/${parsedURL[2]}/${id}`);
       }
-      return comment;
+      break;
 
     case "event":
       comment = await EventComment.findById(commentId);
       if (!comment.author.equals(req.user._id)) {
-        // 작성자가 아니면 편집 요청 못하게
         req.flash("error", "You do not have permission to do that!");
         return res.redirect(`/${parsedURL[1]}/${parsedURL[2]}/${id}`);
       }
-      return comment;
+      break;
   }
 
   next();
