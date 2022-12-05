@@ -1,0 +1,40 @@
+.row {
+    width: 100%;
+}
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+}
+.card {
+    width: 80%;    
+    margin-top: 16vh;
+}
+.comment {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.comment > h2 {
+    margin-left: 20px;
+}
+
+.btn_end {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: end;
+}
+
+.read_comment {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.card-footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}

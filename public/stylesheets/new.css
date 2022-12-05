@@ -18,6 +18,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: end;
+    padding-bottom: 25px;
 }
 .btn-secondary {
     background-color: whitesmoke;
