@@ -37,7 +37,9 @@ router.post(
   }),
   (req, res) => {
     req.flash("success", "Welcome back!");
-    const redirectUrl = req.session.returnTo || "/";
+    console.log(req.session);
+    const redirectUrl = req.session.preURL || "/";
+    console.log(redirectUrl);
     res.redirect(redirectUrl);
   }
 );

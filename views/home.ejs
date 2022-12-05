@@ -103,34 +103,20 @@
         <div class="table_padding">
           <table class="table table-borderless table-hover" style="table-layout: fixed;">
             <tbody>
-              <tr>
-                <th scope="row" class="text-center" style="width: 10%;">[공지]</th>
-                <a href="">
-                  <th scope="row" style="width: 70%;" title="소프트웨어 직무역량강화 워크숍 안내">소프트웨어 직무역량강화 워크숍 안내
+              <% for(const [i, post] of posts.entries()) { %>
+                <tr>
+                  <th class="text-center" scope="row">[공지]</th>
+                  <th class="text-center">
+                    <a class="primary" href="/notice/notice/<%= post._id %>"
+                      ><%= post.title %></a
+                    >
                   </th>
-                </a>
-                <th scope="row" style="width: 107px;">2022.11.23</th>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">[공지]</th>
-                <th scope="row">2022 컴퓨터공학과 산학협의회 워크샵 개최</th>
-                <th scope="row">2022.11.18</th>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center"></th>
-                <th scope="row" class="text-start">2022학년도 2학기 기말고사 공지</th>
-                <th scope="row">2022.11.25</th>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center"></th>
-                <th scope="row">봉사장학금 변경사항 안내</th>
-                <th scope="row">2022.11.23</th>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center"></th>
-                <th scope="row">2022학년도 진로활동 우수 장학금 지급 계획 안내(21~22학번 신청)</th>
-                <th scope="row">2022.10.28</th>
-              </tr>
+                  <th class="text-center"><%= post.author.username %></th>
+                  <th class="text-center">
+                    <%= post.date.toLocaleDateString("en-US") %>
+                  </th>
+                </tr>
+                <% } %>
             </tbody>
           </table>
         </div>

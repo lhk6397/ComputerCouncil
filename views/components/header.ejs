@@ -1,40 +1,48 @@
-<script src="//code.jquery.com/jquery-3.4.1.min.js">//jquery</script>
+<script src="//code.jquery.com/jquery-3.4.1.min.js">
+  //jquery
+</script>
 <header class="header sticky-top">
   <div id="blue"></div>
   <div id="red"></div>
   <div id="grey"></div>
   <div style="background-color: white">
-    <a href="https://computer.seoultech.ac.kr/"><img alt="컴퓨터공학과 학생회" id="school_logo"
-        src="/pictures/schoolLogo.jpg" /></a>
+    <a href="https://computer.seoultech.ac.kr/"
+      ><img
+        alt="컴퓨터공학과 학생회"
+        id="school_logo"
+        src="/pictures/schoolLogo.jpg"
+    /></a>
     <a href="/" id="next_logo">| 컴퓨터공학과 학생회</a>
   </div>
-  <script>
-
-  </script>
+  <script></script>
 
   <div class="header_menu">
     <ul class="header_main">
-      <li class="main_li"><a href="/intro">Intro</a>
+      <li class="main_li">
+        <a href="/intro">Intro</a>
         <ul class="sub">
           <li><a href="/intro">Intro</a></li>
           <li><a href="intro?category=chart">Chart</a></li>
           <li><a href="intro?category=history">History</a></li>
         </ul>
       </li>
-      <li class="main_li"><a href="/notice">Notice</a>
+      <li class="main_li">
+        <a href="/notice">Notice</a>
         <ul class="sub">
           <li><a href="/notice">Notice</a></li>
           <li><a href="/notice/event">Event</a></li>
         </ul>
       </li>
-      <li class="main_li"><a href="/community">Community</a>
+      <li class="main_li">
+        <a href="/community">Community</a>
         <ul class="sub">
           <li><a href="/community">Board</a></li>
           <li><a href="/community?category=faq">FAQ</a></li>
           <li><a href="/community?category=contact">Contact</a></li>
         </ul>
       </li>
-      <li class="main_li"><a href="/reference">Reference</a>
+      <li class="main_li">
+        <a href="/reference">Reference</a>
         <ul class="sub">
           <li><a href="/reference">Reference</a></li>
         </ul>
@@ -42,11 +50,13 @@
       <li id="login_li">
         <img title="로그인" alt="login" src="/pictures/login.jpg" id="login" />
         <ul id="login_sub">
+          <% if(!currentUser) { %>
           <li><a href="/login">Login</a></li>
-          <!-- <li><a href="#">Log0ut</a></li> 여긴 로그아웃인데 로그인하면 로그아웃으로 바껴야될 것 같아서 주석처리 해놈-->
           <li><a href="/register">Register</a></li>
+          <% } else { %>
+          <li><a href="/logout">Log0ut</a></li>
+          <% } %>
         </ul>
-        
       </li>
     </ul>
   </div>
@@ -54,33 +64,30 @@
   <script>
     $(document).ready(function () {
       //menu bar
-      const bar = $('.header_main > li').not('#login_li');
+      const bar = $(".header_main > li").not("#login_li");
       bar.mouseover(function () {
-        $(this).children('.sub').slideDown();
+        $(this).children(".sub").slideDown();
       });
       bar.mouseleave(function () {
-        $(this).children('.sub').slideUp('slow', function () {
-          bar
-            .css('background-color', 'white')
-            .css('color', 'black');
-        });
+        $(this)
+          .children(".sub")
+          .slideUp("slow", function () {
+            bar.css("background-color", "white").css("color", "black");
+          });
       });
       bar.mouseover(function () {
-        $(this)
-          .css('background-color', 'whitesmoke')
-          .css('color', 'tomato');
+        $(this).css("background-color", "whitesmoke").css("color", "tomato");
       });
 
       //login
-      const login = $('#login_li');
+      const login = $("#login_li");
       var cnt = 0;
       login.click(function () {
-        if(cnt == 0) {
-          $(this).children('#login_sub').slideDown();
+        if (cnt == 0) {
+          $(this).children("#login_sub").slideDown();
           cnt++;
-        }
-        else {
-          $(this).children('#login_sub').slideUp();
+        } else {
+          $(this).children("#login_sub").slideUp();
           cnt--;
         }
       });

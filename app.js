@@ -11,6 +11,7 @@ const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
+const NoticePost = require("./models/noticePost");
 
 const communityBoardRoutes = require("./routes/communityBoard");
 const communityBoardCommentRoutes = require("./routes/communityBoardComment");
@@ -19,6 +20,7 @@ const noticeCommentRoutes = require("./routes/noticeComment");
 const eventRoutes = require("./routes/event");
 const eventCommentRoutes = require("./routes/eventComment");
 const userRoutes = require("./routes/users");
+const catchAsync = require("./utils/catchAsync");
 
 const PORT = 3000;
 
@@ -71,9 +73,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => {
-  res.render("home");
-});
+app.get(
+  "/",
+  catchAsync(async (req, res) => {
+    const posts = await NoticePost.find({});
+    res.render("home", { posts });
+  })
+);
 
 app.use("/", userRoutes);
 app.use("/notice/notice", noticeRoutes);

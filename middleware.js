@@ -13,6 +13,8 @@ const catchAsync = require("./utils/catchAsync");
 module.exports.isLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
     req.flash("error", "You must be signed in first");
+    req.session.preURL = req.originalUrl;
+    console.log(req.session);
     return res.redirect("/login");
   }
   next();
@@ -43,17 +45,16 @@ module.exports.validateComment = (req, res, next) => {
 // Post Author 일치 확인
 module.exports.isAuthor = async (req, res, next) => {
   const { id } = req.params;
-  let post = {};
   const parsedURL = req.originalUrl.split("/");
   switch (parsedURL[2]) {
     case "board":
       post = await CommunityPost.findById(id);
-      console.log(post);
       if (!post.author.equals(req.user._id)) {
         // 작성자가 아니면 편집 요청 못하게
         req.flash("error", "You do not have permission to do that!");
         return res.redirect(`/${parsedURL[1]}/${parsedURL[2]}/${id}`);
       }
+      break;
     case "notice":
       post = await NoticePost.findById(id);
       if (!post.author.equals(req.user._id)) {
@@ -61,6 +62,7 @@ module.exports.isAuthor = async (req, res, next) => {
         req.flash("error", "You do not have permission to do that!");
         return res.redirect(`/${parsedURL[1]}/${parsedURL[2]}/${id}`);
       }
+      break;
     case "event":
       post = await EventPost.findById(id);
       if (!post.author.equals(req.user._id)) {
@@ -68,6 +70,7 @@ module.exports.isAuthor = async (req, res, next) => {
         req.flash("error", "You do not have permission to do that!");
         return res.redirect(`/${parsedURL[1]}/${parsedURL[2]}/${id}`);
       }
+      break;
   }
   next();
 };
