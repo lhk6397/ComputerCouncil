@@ -39,7 +39,7 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: true,
   cookie: {
-    httpOnly: true,
+    httpOnly: true, //  Cross-site 스크립팅 공격을 방지
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
     maxAge: 1000 * 60 * 60 * 24 * 7,
   },
@@ -48,9 +48,9 @@ const sessionConfig = {
 app.use(session(sessionConfig)); // app.use(session())이 app.use(passport.session()) 전에 있어야함.
 app.use(flash());
 
-app.use(passport.initialize());
-app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
+app.use(passport.initialize()); // passport를 사용한다고 express에게 알림.
+app.use(passport.session()); // session을 이용하여 passport 동작
+passport.use(new LocalStrategy(User.authenticate())); // 자격검증 방식이 Local
 
 // passportLocalMongoose 덕분에 아래의 두 메서드가 추가
 passport.serializeUser(User.serializeUser()); // passport에게 사용자를 어떻게 직렬화하는지 알려주고, 직렬화는 어떻게 데이터를 얻고 세션에서 사용자를 저장하는지를 참조

@@ -110,3 +110,10 @@ module.exports.isCommentAuthor = async (req, res, next) => {
 
   next();
 };
+
+module.exports.checkPreURL = (req, res, next) => {
+  if (req.session.preURL) {
+    res.locals.preURL = req.session.preURL;
+  }
+  next();
+};
