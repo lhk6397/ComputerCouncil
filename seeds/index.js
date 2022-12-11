@@ -28,7 +28,7 @@ const seedDB = async () => {
     await eventPost.save();
   }
   const communityPost = new CommunityPost({
-    author: "6389e3edcbd492fe57757724",
+    author: "6395853252895b9f0e4cbd11",
     contents: "배가 고픕니다",
     title: "안녕하세요",
     comments: [],
