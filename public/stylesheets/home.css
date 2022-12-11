@@ -9,7 +9,7 @@ body {
   width: 100%;
   height: 90vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.1)),
-  url("/pictures/banner.jpg");
+    url("/pictures/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -37,14 +37,13 @@ body {
   color: white;
   padding-top: 120px;
   text-align: center;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
   line-height: 1;
-  
 }
-.banner_movement, .banner_movement_2  {
-  opacity: 0; 
+.banner_movement,
+.banner_movement_2 {
+  opacity: 0;
 }
-
 
 .movement {
   font-size: 78px;
@@ -103,7 +102,7 @@ body {
   aspect-ratio: 1/1;
   margin: 0 40px;
   border-radius: 7px;
-} 
+}
 
 .box_inner {
   text-align: center;
@@ -111,24 +110,23 @@ body {
   vertical-align: middle;
   width: 100%;
   height: 100%;
-  padding-top: 15%;
+  padding: 15%;
 }
 .box_inner > p {
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   margin-bottom: 0.5vh;
+  margin-top: 3vh;
 }
 .box_inner > .h3 {
-  margin-top: -15px;
-  font-size: 2.5vw;
+  font-size: 2vw;
 }
-
 
 .url_box_2 {
   top: 30px;
 }
 
 .insta_img {
-  width: 30%;
+  width: 25%;
 }
 
 .intro_notice {
@@ -162,23 +160,23 @@ body {
 
 .gallery .carousel-caption {
   left: 150px !important;
- }
- 
+}
+
 .gallery.active .carousel-caption {
   left: 150px !important;
- }
- 
- .gallery.active.left .carousel-caption {
-  left: 150px !important;
- }
+}
 
- .carousel-inner > .carousel-item > img {
+.gallery.active.left .carousel-caption {
+  left: 150px !important;
+}
+
+.carousel-inner > .carousel-item > img {
   top: 0;
   left: 0;
   min-width: 100%;
   min-height: 300px;
   object-fit: contain;
-} 
+}
 
 .notice_body {
   width: 60%;
