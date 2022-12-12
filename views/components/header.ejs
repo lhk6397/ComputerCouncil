@@ -47,6 +47,9 @@
           <li><a href="/reference">Reference</a></li>
         </ul>
       </li>
+      <% if(currentUser) { %>
+      <li><span><%= currentUser.username %></span></li>
+      <% } %>
       <li id="login_li">
         <img title="로그인" alt="login" src="/pictures/login.jpg" id="login" />
         <ul id="login_sub">
