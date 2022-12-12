@@ -174,6 +174,10 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;
   if (!err.message) err.message = "Oh No, Something Went Wrong!";
+  if (err.message == "Page Not Found") {
+    res.status(statusCode).render("404");
+    return;
+  }
   res.status(statusCode).render("error", { err });
 });
 
